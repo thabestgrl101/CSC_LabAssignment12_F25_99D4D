@@ -17,13 +17,19 @@ def sudoku_grid_correct(sudoku: list):
     # Check all rows
     for row in range(9):
         # TODO: call function row_check(), if any row returns False, return False.
+        if not row_check(sudoku, row):
+             return False
 
     # Check all columns
     for col in range(9):
         #TODO: call function column_check(), if any column returns False, return False
+        if not column_check(sudoku, col):
+            return False
 
     # Check all 3x3 blocks
     # TODO: use two levels of for loop to send all the possible standing indices which are: (0, 0), (0, 3), (0, 6), (3, 0), (3, 3), (3, 6), (6, 0), (6, 3) and (6, 6).
+    for row in range(0, 9, 3):
+        for col in range(0, 9, 3):
 
             # the following two lines are inside the nested for loop
             if not block_check(sudoku, row, col):
