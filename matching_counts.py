@@ -13,9 +13,16 @@ def count_matching(matrix, target):
     """
 
     # TODO: set initial variable `count`
+    count = 0
 
     # TODO: use external loop to get all nested list
+    for row in matrix:
+        
     # TODO: use inner loop to get every element of the inner list, if the element is equal to the target argument, increase `count` by 1
+        for element in row:
+            if element == target:
+                count += 1
+
 
     return count
 
